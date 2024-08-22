@@ -41,7 +41,7 @@ jobs:
 
       - name: Build with nix
         run: |
-          nix build ${{ matrix.build-flags }} .#{{stable,beta,minimal,default,complete}.toolchain,rust-analyzer{,-vscode-extension}}
+          nix build ${{ matrix.build-flags }} .#{{stable,beta,minimal,default,complete}.toolchain,rust-analyzer{,-nightly,-vscode-extension}}
           ./test
 
           nix build ${{ matrix.build-flags }} .#latest.toolchain
